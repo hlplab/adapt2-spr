@@ -1,9 +1,10 @@
-var shuffleSequence = seq("intro", "info", "practice", sepWith("sep", shuffle(randomize("filler"), rshuffle("SC","DO"))), "outtro");
+var shuffleSequence = seq("intro", "info", "practice", sepWith("sep", shuffle(randomize("filler"), rshuffle("SC","DO"))), "contact", "sr", "code");
 
 var ds = "RegionedSentence"
 var qs = "Question"
 
 var defaults = [
+    manualSendResults = true,
     "Separator", {
         transfer: 1500,
         normalMessage: "Please wait for the next sentence",
@@ -17,6 +18,7 @@ var defaults = [
 ];
 
 var items = [
+    ["sr", "__SendResults__", { }],
     ["sep", "Separator", {}],
     ["intro", "Message", {consentRequired: true, html: {include: "intro.html"}}],
     ["info", "Form", {html: { include: "info.html" }, } ],
@@ -180,6 +182,7 @@ var items = [
         qs, {q: "Did the lifeguard have a designated portion of the beach to watch? " , hasCorrect: "Yes", randomOrder: false}],
     ["filler", ds, {s: "Warm milk always soothed the infants in the nursery."}, 
         qs, {q: "Did the nursery use warm milk to calm the infants? " , hasCorrect: "Yes", randomOrder: false}],
-    ["outtro", "Message", {consentRequired: false, html: {include: "contacts.html"}}] 
+    ["contact", "Message", {consentRequired: false, html: {include: "contacts.html"}}],
+    ["code", "Message", {consentRequired: false, html: {include: "code.html"}}]
 ];
 
