@@ -1,10 +1,11 @@
 var shuffleSequence = seq("intro", "info", "practice", sepWith("sep", shuffle(randomize("filler"), rshuffle("SC","DO"))), "contact", "sr", "code");
 
-var ds = "RegionedSentence"
-var qs = "Question"
+var ds = "RegionedSentence";
+var qs = "Question";
+
+var manualSendResults = true;
 
 var defaults = [
-    manualSendResults = true,
     "Separator", {
         transfer: 1500,
         normalMessage: "Please wait for the next sentence",
